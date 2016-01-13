@@ -1,4 +1,6 @@
 # coding:utf8
+import url_manager, html_downloader, html_parser, html_outputer
+
 class SpiderMain(object):
 
 	def __init__(self):
@@ -13,22 +15,22 @@ class SpiderMain(object):
 		while self.urls.has_new_url():
 			try:
 				new_url = self.urls.get_new_url()
-				print('craw %d :%s' % (count, new_url))
+				print('craw %d : %s' % (count, new_url))
 				html_cont = self.downloadder.download(new_url)
 				new_urls, new_data = self.parser.parse(new_url, html_cont)
-				self.urls.add_new_urls(news_urls)
+				self.urls.add_new_urls(new_urls)
 				self.outputer.collect_data(new_data)
 
-				if count == 1000:
+				if count == 10:
 					break
 
 				count = count + 1
-		except:
-			print('craw failed')
+			except:
+				print('craw failed')
 		self.outputer.outout_html() 
 
 if __name__ == "__main__":
-	root_url = ""
+	root_url = "http://baike.baidu.com/view/21087.htm"
 	obj_spider = SpiderMain()
 	obj_spider.craw(root_url)
 

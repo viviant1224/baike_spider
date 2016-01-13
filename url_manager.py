@@ -5,13 +5,13 @@ class UrlManager(object):
 		self.new_urls = set()#wait for spider
 		self.old_urls = set()
 
-	def add_new_url(self):
+	def add_new_url(self, url):
 		if url is None:
 			return
 		if url not in self.new_urls and url not in self.old_urls:
 			self.new_urls.add(url)
 
-	def add_new_urls(self):
+	def add_new_urls(self, urls):
 		if urls is None or len(urls) == 0:
 			return
 		for url in urls:
