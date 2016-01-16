@@ -1,4 +1,9 @@
  # coding:utf8
+"""
+output the content to the html file
+
+"""
+
 class HtmlOutputer(object):
 
 	def __init__(self):

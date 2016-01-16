@@ -1,4 +1,8 @@
 # coding:utf8
+"""
+Url Manager
+
+"""
 class UrlManager(object):
 
 	def __init__(self):

@@ -1,5 +1,9 @@
 # coding:utf8
 import urllib.request
+"""
+Html content download
+"""
+
 class HtmlDownloader(object):
 
 	def download(self, url):

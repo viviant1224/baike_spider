@@ -2,6 +2,10 @@
 from bs4 import BeautifulSoup
 import re
 import urllib.parse
+"""
+Html parser
+
+"""
 class HtmlParser(object):
 
 	def _get_new_urls(self, page_url, soup):
